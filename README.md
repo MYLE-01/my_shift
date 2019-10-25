@@ -74,7 +74,7 @@ An example for lovelace
     secondary_info: ' Next start: [[ {entity}.attributes.nextstartdate ]]''
     type: 'custom:secondaryinfo-entity-row'
 ```
-next occur and the year will be displayed in secondaryinfo area of the card
+next start date will show in secondary_info line
 
 
 
