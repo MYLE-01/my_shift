@@ -1,6 +1,10 @@
 # my shift
 base on your work patten will work out if you on/off
 
+Big thanks to
+
+[mf-socials](https://github.com/mf-social/ps-date-countdown)
+
 ## How it works
 This script creates a sensor that work out weather you are on/off for today
 
