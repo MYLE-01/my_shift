@@ -1,9 +1,8 @@
 # my shift
 base on your work patten will work out if you on/off
 
-Big thanks to
+Big thanks to [mf-socials](https://github.com/mf-social/ps-date-countdown) for his countdown script that show me how to write this python version I first wrote it about 5 year ago in a execl file
 
-[mf-socials](https://github.com/mf-social/ps-date-countdown)
 
 ## How it works
 This script creates a sensor that work out weather you are on/off for today
