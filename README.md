@@ -18,8 +18,6 @@ key | required | type | description
 
 `firstdayshift:` only has tobe full out once as it just uses maths to work out weather you on/off
 
-way it is by
-
 
 shiftpatten | patten
 --|--
