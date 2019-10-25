@@ -16,6 +16,9 @@ key | required | type | description
 `shiftpatten:` | True | string | Type of Shift  
 `firstdayshift:` | True | string | Date, in format DD/MM/YYYY day 1 of shift patten
 
+`firstdayshift:` only has tobe full out once as it just uses maths to work out weather you on/off
+
+
 shiftpatten | patten
 --|--
 '4x4x12'|    4 days ON x 4 days off x 12 hour days 
