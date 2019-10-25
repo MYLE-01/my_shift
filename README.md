@@ -38,7 +38,7 @@ name: StePhan
 shiftpatten: 4x4x12
 firstdayshift: 20/10/2019
 ```
-So, the two sensors we created above would come out as:
+So, the sensor we created above would come out as:
 
 ```
 sensor.StePhan_4x4x12
@@ -75,9 +75,3 @@ An example for lovelace
     type: 'custom:secondaryinfo-entity-row'
 ```
 next start date will show in secondary_info line
-
-
-
-
-
-
