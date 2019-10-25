@@ -16,10 +16,8 @@ key | required | type | description
 `shiftpatten:` | True | string | Type of Shift  
 `firstdayshift:` | True | string | Date, in format DD/MM/YYYY day 1 of shift patten
 
-shiftpatten:
-
-4x4x12   4 days ON x 4 days off x 12 hour days 
-
-5x2x8    5 days ON x 2 days off x 8 hour days 
-
-6x1x8    6 days ON x 1 day off x 8 hour days 
+shiftpatten | patten
+--|--
+'4x4x12'|    4 days ON x 4 days off x 12 hour days 
+'5x2x8'|    5 days ON x 2 days off x 8 hour days 
+'6x1x8' |    6 days ON x 1 day off x 8 hour days 
