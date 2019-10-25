@@ -26,7 +26,7 @@ shiftpatten | patten
 Each sensor **requires**:
 
 ```
-name: NAME_OF_DATE
+name: NAME_OF_SHIFT_PATTEN
 shiftpatten: SHIFT_PATTEN 4x4x12
 date: DD/MM/YYYY_date of first day of the patten
 ```
