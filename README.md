@@ -41,7 +41,8 @@ Each sensor **requires**:
 ```
 name: NAME_OF_SHIFT_PATTEN
 shiftpatten: SHIFT_PATTEN 4x4x12
-date: DD/MM/YYYY_date of first day of the patten
+patten: DDNN
+firstdayshift: DD/MM/YYYY_date of first day of the patten must be sometime in the pass
 ```
 
 examples:
@@ -49,6 +50,7 @@ examples:
 ```
 name: StePhan
 shiftpatten: 4x4x12
+patten: DDNN
 firstdayshift: 20/10/2019
 ```
 So, the sensor we created above would come out as:
@@ -58,6 +60,7 @@ sensor.StePhan_4x4x12
 friendly_name: StePhan's 4x4x12
 state: on = working  off = notworking
 dayspatten: what patten are we in
+thisday: what shift are we working today
 nextstartdate: next startof shift patten
 ```
 ## Example configuration.yaml entry
@@ -76,6 +79,7 @@ automation:
         data:
           name: StePhan
           shiftpatten: 4x4x12
+          patten: DDNN
           firstdayshift: 20/10/2019
 ```
 ## Showing it in lovelace
