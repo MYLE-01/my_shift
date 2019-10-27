@@ -18,8 +18,12 @@ key | required | type | description
 `name:` | True | string | Name of the date (eg. StePhan)
 `shiftpatten:` | True | string | Type of Shift  
 `firstdayshift:` | True | string | Date, in format DD/MM/YYYY day 1 of shift patten
-'patten:' | True | string | What the Patten DDNN = (doing 2 days then 2 nigths)
+`patten:` | True | string | What the Patten DDNN = (doing 2 days then 2 nigths)
 
+`patten:` is what shift patten are you doing
+
+DDNN = work 2 days then 2 nites
+DDDDD = work 5 days in a row
 
 `firstdayshift:` only has tobe full out once as it just uses maths to work out weather you on/off
 
