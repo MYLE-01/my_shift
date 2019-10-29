@@ -32,12 +32,12 @@ DDDDD = work 5 days in a row
 shiftpatten | patten
 --|--
 '4x4x12'|    4 days ON x 4 days off x 12 hour days 
+'4x2x12'|    4 days ON x 2 days off x 12 hour days 
 '5x2x8'|    5 days ON x 2 days off x 8 hour days 
 '6x1x8' |    6 days ON x 1 day off x 8 hour days 
 
-if you are a monday-friday work try this
-
-[workday Binary Sensor}(https://www.home-assistant.io/integrations/workday/)
+if you are a monday-friday work try this [workday Binary Sensor](https://www.home-assistant.io/integrations/workday/)
+as this look at the public hoildays in your country
 
 ## Usage
 Each sensor **requires**:
