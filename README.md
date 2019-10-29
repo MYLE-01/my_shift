@@ -1,11 +1,20 @@
 # my shift
 base on your work patten will work out if you on/off
+even if you do days then nite like i do 2 days swing day then 2 nites then 4 days off :)
 
-Big thanks to [mf-socials](https://github.com/mf-social/ps-date-countdown) for his countdown script that show me how to write this python version I first wrote it about 5 year ago in a execl file
+Big thanks to [mf-socials](https://github.com/mf-social/ps-date-countdown) for his countdown script that show me how to write this 
 
+Had the logic just did know were to start 
+
+first wrote it in vb that was easy
+
+python getting head around it
 
 ## How it works
 This script creates a sensor that work out weather you are on/off for today
+with a heap of attribute 
+
+
 
 Requires `python_script:` to be enabled in you configuration
 
@@ -21,12 +30,13 @@ key | required | type | description
 `patten:` | True | string | What the Patten DDNN = (doing 2 days then 2 nigths)
 
 `patten:` is what shift patten are you doing
-
+eg
 DDNN = work 2 days then 2 nites
 
 DDDDD = work 5 days in a row
 
 `firstdayshift:` only has tobe full out once as it just uses maths to work out weather you on/off
+
 
 
 shiftpatten | patten
@@ -36,7 +46,10 @@ shiftpatten | patten
 '5x2x8'|    5 days ON x 2 days off x 8 hour days 
 '6x1x8' |    6 days ON x 1 day off x 8 hour days 
 
-if you are a monday-friday work try this [workday Binary Sensor](https://www.home-assistant.io/integrations/workday/)
+must be small x
+
+
+if you are a monday-friday worker try this [workday Binary Sensor](https://www.home-assistant.io/integrations/workday/)
 as this look at the public hoildays in your country
 
 ## Usage
@@ -60,12 +73,14 @@ firstdayshift: 20/10/2019
 So, the sensor we created above would come out as:
 
 ```
-sensor.StePhan_4x4x12
-friendly_name: StePhan's 4x4x12
-state: on = working  off = notworking
-dayspatten: what patten are we in
-thisday: what shift are we working today
-nextstartdate: next startof shift patten
+icon: 'mdi:calendar-star'
+friendly_name: StePhan's Roster
+shift patten: 4x4x12
+patten: DDNN
+day_of_this_shift_patten: '2'
+this_day: Day
+next_start_date: 5/11/2019
+First_Day_Shift_Was: 20/10/2019
 ```
 ## Example configuration.yaml entry
 An example automation to create and refresh the above two sensors daily would be:
