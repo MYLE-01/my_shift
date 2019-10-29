@@ -35,6 +35,10 @@ shiftpatten | patten
 '5x2x8'|    5 days ON x 2 days off x 8 hour days 
 '6x1x8' |    6 days ON x 1 day off x 8 hour days 
 
+if you are a monday-friday work try this
+
+[workday Binary Sensor}(https://www.home-assistant.io/integrations/workday/)
+
 ## Usage
 Each sensor **requires**:
 
