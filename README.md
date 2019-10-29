@@ -10,6 +10,8 @@ first wrote it in vb that was easy
 
 python getting head around it
 
+took me longer to write this readme than to write the code.
+
 ## How it works
 This script creates a sensor that work out weather you are on/off for today
 with a heap of attribute 
