@@ -28,6 +28,10 @@ sensorName = "sensor.{}_{}".format(name.replace(" " , "_"),shiftpatten)
 
 FirstDayShift_Mod = (DaysDiff % WeekPatten)
 
+if (FirstDayShift_Mod == 0):
+  FirstDayShift_Mod = WeekPatten
+
+
 # work out the logic for on/off
 
 # need to make patten longer with some blank
