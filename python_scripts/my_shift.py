@@ -39,21 +39,19 @@ if (FirstDayShift_Mod == 0):
 patten = patten + " " * FirstDayShift_Mod
 
 ThisShift = ""
+areweonoff = ""
 
-if FirstDayShift_Mod >= int(PattenShift[0]):
+if FirstDayShift_Mod > int(PattenShift[0]):
   areweonoff = 'Off'
   ThisShift = "OFF"
 
-elif FirstDayShift_Mod < int(PattenShift[0]):
+elif FirstDayShift_Mod <= int(PattenShift[0]):
   areweonoff = 'on'
   ThisShift = patten[FirstDayShift_Mod-1]
 
 # well as we know what day patten we are in
 # we can work out our next start date.
 nextStartdays = (WeekPatten - FirstDayShift_Mod) 
-
-# to mines over this logic if its first day
-# do we show todays date or next shift start
 
 nextstartDate = today + datetime.timedelta(nextStartdays + 1 )
 
