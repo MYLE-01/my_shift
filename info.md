@@ -118,4 +118,7 @@ An example for lovelace
     secondary_info: ' Next start: [[ {entity}.attributes.nextstartdate ]]''
     type: 'custom:secondaryinfo-entity-row'
 ```
+
+![lovelace](https://github.com/MYLE-01/my_shift/blob/master/card.PNG)
+
 next start date will show in secondary_info line
