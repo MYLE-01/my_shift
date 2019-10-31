@@ -107,6 +107,8 @@ automation:
           patten: DDNN
           firstdayshift: 20/10/2019
 ```
+(https://github.com/MYLE-01/my_shift/blob/master/attributes.PNG)
+
 ## Showing it in lovelace
 An example for lovelace
 (at this point of time you have to the secondaryinfo-entity-row )
