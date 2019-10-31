@@ -2,13 +2,15 @@
 base on your work patten will work out if you on/off
 even if you do days then nite like i do 2 days swing day then 2 nites then 4 days off :)
 
-Big thanks to [mf-socials](https://github.com/mf-social/ps-date-countdown) for his countdown script that show me how to write this 
+Big thanks to [mf-socials](https://github.com/mf-social/ps-date-countdown) for his countdown script 
 
-Had the logic just did know were to start 
+that pointed me down down the track well where to start so thanks mf-socials again
+
+Had the logic just did not know were to start 
 
 first wrote it in vb that was easy
 
-python getting head around it
+python still getting head around it
 
 took me longer to write this readme than to write the code.
 
@@ -43,12 +45,14 @@ DDDDD = work 5 days in a row
 
 shiftpatten | patten
 --|--
-'4x4x12'|    4 days ON x 4 days off x 12 hour days 
-'4x2x12'|    4 days ON x 2 days off x 12 hour days 
-'5x2x8'|    5 days ON x 2 days off x 8 hour days 
-'6x1x8' |    6 days ON x 1 day off x 8 hour days 
+'4x4x12'|    4 days ON x 4 days off x 12 hour days and it a 8 day cycle 
+'4x2x12'|    4 days ON x 2 days off x 12 hour days and it a 6 day cycle
+'5x2x8'|    5 days ON x 2 days off x 8 hour days and it a 7 day cycle
+'6x1x8' |    6 days ON x 1 day off x 8 hour days and it a 7 day cycle
 
 must be small x
+
+I have tested the above shiftpatten if someone has a differance patten it should work
 
 
 if you are a monday-friday worker try this [workday Binary Sensor](https://www.home-assistant.io/integrations/workday/)
