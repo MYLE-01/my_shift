@@ -55,6 +55,11 @@ nextStartdays = (WeekPatten - FirstDayShift_Mod)
 
 nextstartDate = today + datetime.timedelta(nextStartdays + 1 )
 
+nextoffDate = nextstartDate - datetime.timedelta(days=int(PattenShift[1]))
+
+if nextoffDate < nextstartDate :
+  nextoffDate = nextoffDate + datetime.timedelta(days=WeekPatten)
+
 # hard work done put what we know into the sensor
 # attributes So we can use them somewhere else in home assistant
 
