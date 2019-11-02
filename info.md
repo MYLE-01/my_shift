@@ -86,6 +86,7 @@ patten: DDNN
 day_of_this_shift_patten: '2'
 this_day: Day
 next_start_date: 5/11/2019
+next_off_date: 09/11/2019
 First_Day_Shift_Was: 20/10/2019
 ```
 ## Example configuration.yaml entry
