@@ -74,6 +74,7 @@ hass.states.set(sensorName , areweonoff ,
     "day_of_this_shift_patten" : "{}".format(FirstDayShift_Mod) ,
     "this_day": "{}".format(ThisShift.replace("D","Day").replace("N","Night")),
     "next_start_date" : "{}/{}/{}".format(nextstartDate.day,nextstartDate.month,nextstartDate.year) , 
+    "next_off_date" : "{}/{}/{}".format(nextoffDate.day,nextoffDate.month,nextoffDate.year) , 
     "First_Day_Shift_Was" : "{}/{}/{}".format(FirstDayShift.day,FirstDayShift.month,FirstDayShift.year)
   }
 )
