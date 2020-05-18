@@ -32,6 +32,8 @@ key | required | type | description
 `shiftpatten:` | True | string | Type of Shift  
 `firstdayshift:` | True | string | Date, in format DD/MM/YYYY day 1 of shift patten
 `patten:` | True | string | What the Patten DDNN = (doing 2 days then 2 nigths)
+'holiday_start:' | True | string | Date, in format DD/MM/YYYY of holiday start
+'holiday_end:' | True | string | Date, in format DD/MM/YYYY of holiday end
 
 `patten:` is what shift patten are you doing
 eg
@@ -49,6 +51,12 @@ shiftpatten | patten
 '4x2x12'|    4 days ON x 2 days off x 12 hour days and it a 6 day cycle
 '5x2x8'|    5 days ON x 2 days off x 8 hour days and it a 7 day cycle
 '6x1x8' |    6 days ON x 1 day off x 8 hour days and it a 7 day cycle
+
+
+NOTE:
+
+holiday_start: and holiday_end: will only kick in after next restart
+
 
 must be small x
 
@@ -75,6 +83,8 @@ name: StePhan
 shiftpatten: 4x4x12
 patten: DDNN
 firstdayshift: 20/10/2019
+holiday_start: 26/05/2020
+holiday_end: 12/07/2020
 ```
 So, the sensor we created above would come out as:
 
