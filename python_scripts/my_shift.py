@@ -5,6 +5,24 @@ shiftpatten = data.get('shiftpatten')
 name = data.get('name')
 dateStr = data.get('firstdayshift')
 patten = data.get('patten')
+Holiday_Start = data.get("holiday_start")
+Holiday_End = data.get("holiday_end")
+
+# Format the Inputed dates to a real date value so we can do some maths on them
+
+dateSplit = Holiday_Start.split("/")
+dateDay = int(dateSplit[0])
+dateMonth = int(dateSplit[1])
+dateYear =  int(dateSplit[2])
+holiday_st = datetime.date(dateYear,dateMonth,dateDay)
+
+dateSplit = Holiday_End.split("/")
+dateDay = int(dateSplit[0])
+dateMonth = int(dateSplit[1])
+dateYear =  int(dateSplit[2])
+holiday_ed = datetime.date(dateYear,dateMonth,dateDay)
+
+
 
 # Sort out the Date
 
@@ -60,6 +78,14 @@ nextoffDate = nextstartDate - datetime.timedelta(days=int(PattenShift[1]))
 if nextoffDate < nextstartDate :
   nextoffDate = nextoffDate + datetime.timedelta(days=WeekPatten)
 
+# beater Check if we are on hoilday
+  if is_date_between(holiday_st,holiday_ed):
+  areweonoff = 'Off'
+  ThisShift = "off"  
+  logger.info("=============== H O L I D A Y ==================")
+  
+  
+  
 # hard work done put what we know into the sensor
 # attributes So we can use them somewhere else in home assistant
 
