@@ -127,3 +127,89 @@ An example for lovelace
     type: 'custom:secondaryinfo-entity-row'
 ```
 next start date will show in secondary_info line
+
+## how I use in my house
+
+asthe alram wakes me 2day out of 8day cycle
+
+```
+#=======================================================================
+- id: 'Wake me up roster only morning'
+  alias: Wake me up roster morning
+  trigger:
+  - at: '4:00:00'
+    platform: time
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: sensor.stephan_4x4x12
+      state: 'on'
+    - condition: template
+    # read the attributes of my sensor am I on DAYS/NIGHT of off
+      value_template: >-
+        {{states.sensor.stephan_4x4x12.attributes["this_day"] == 'Day'}}
+  action:
+  - data:
+      entity_id: switch.kettle_power
+    service: switch.turn_on
+  - data:
+      entity_id: light.his_side
+    service: light.turn_on
+  - delay: '00:10:00'
+  - data:
+      entity_id: light.his_side
+    service: light.turn_off  
+  ```
+  and the afternoon one
+  which as the bed sensor in the condition mite have got up
+  
+  ```
+#=======================================================================
+#
+#=======================================================================
+- id: 'Wake me up roster only afternoom'
+  alias: Wake me up roster afternoom
+  trigger:
+  - at: '16:00:00'
+    platform: time
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: sensor.stephan_4x2x12
+      state: 'on'
+    - condition: template
+      value_template: >-
+        {{states.sensor.stephan_4x4x12.attributes["this_day"] == 'Night'}}
+    - condition: state
+      entity_id: binary_sensor.in_bed_his_side
+      state: 'on'
+  action:
+  - data:
+      entity_id: switch.kettle_power
+    service: switch.turn_on
+  - data:
+      entity_id: light.his_side
+    service: light.turn_on
+  - delay: '00:00:01'
+  - data:
+      entity_id: light.his_side
+    service: light.turn_off   
+  - delay: '00:00:01'
+  - data:
+      entity_id: light.his_side
+    service: light.turn_on
+  - delay: '00:00:01'
+  - data:
+      entity_id: light.his_side
+    service: light.turn_off   
+  - delay: '00:00:01'
+  - data:
+      entity_id: light.his_side
+    service: light.turn_on
+    ```
+
+
+
+
