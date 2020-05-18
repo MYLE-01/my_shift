@@ -130,7 +130,7 @@ next start date will show in secondary_info line
 
 ## how I use in my house
 
-asthe alram wakes me 2day out of 8day cycle
+As the alarm wakes me 2 day out of 8 day cycle
 
 ```
 #=======================================================================
