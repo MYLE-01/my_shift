@@ -22,7 +22,7 @@ dateMonth = int(dateSplit[1])
 dateYear =  int(dateSplit[2])
 holiday_ed = datetime.date(dateYear,dateMonth,dateDay)
 
-def is_time_between(begin_time, end_time) -> bool:
+def is_date_between(begin_time, end_time) -> bool:
     check_time = today
     if begin_time < end_time:
         return check_time >= begin_time and check_time <= end_time
