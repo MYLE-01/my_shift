@@ -79,7 +79,7 @@ if nextoffDate < nextstartDate :
   nextoffDate = nextoffDate + datetime.timedelta(days=WeekPatten)
 
 # beater Check if we are on hoilday
-  if is_date_between(holiday_st,holiday_ed):
+if is_date_between(holiday_st,holiday_ed):
   areweonoff = 'Off'
   ThisShift = "** Holiday **"  
   logger.info("=============== H O L I D A Y ==================")
