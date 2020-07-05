@@ -101,7 +101,7 @@ if is_date_between(holiday_st,holiday_ed):
 
 # presence
 
-shiftend = nextstartDate + datetime.timedelta(days=int(PattenShift[0]))
+shiftend = nextstartDate + datetime.timedelta(days=int(PattenShift[0])-1)
 
 hass.states.set(sensorName , areweonoff ,
   {
