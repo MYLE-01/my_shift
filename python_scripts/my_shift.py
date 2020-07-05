@@ -1,6 +1,7 @@
 
 today = datetime.datetime.now().date()
 
+
 shiftpatten = data.get('shiftpatten')
 name = data.get('name')
 dateStr = data.get('firstdayshift')
@@ -84,12 +85,15 @@ nextoffDate = nextstartDate - datetime.timedelta(days=int(PattenShift[1]))
 if nextoffDate < nextstartDate :
   nextoffDate = nextoffDate + datetime.timedelta(days=WeekPatten)
 
+message = "{} {}".format(name, "Roster")
+
 # beater Check if we are on hoilday
 if is_date_between(holiday_st,holiday_ed):
   areweonoff = 'Off'
-  ThisShift = "** Holiday **"  
+  message = "** Holiday **"  
   logger.info("=============== H O L I D A Y ==================")
-  
+
+  # nextstartDate = holiday_ed
   
   
 # hard work done put what we know into the sensor
@@ -97,16 +101,21 @@ if is_date_between(holiday_st,holiday_ed):
 
 # presence
 
+shiftend = nextstartDate + datetime.timedelta(days=int(PattenShift[0]))
+
 hass.states.set(sensorName , areweonoff ,
   {
     "icon" : "mdi:calendar-star" ,
-    "friendly_name" : "{}'s {}".format(name, "Roster") ,
+    "friendly_name" : "{} {}".format(name, "Roster") ,
     "shift patten" :"{}".format(shiftpatten) ,
     "patten" : "{}".format(patten.rstrip()) ,
     "day_of_this_shift_patten" : "{}".format(FirstDayShift_Mod) ,
     "this_day": "{}".format(ThisShift.replace("D","Day").replace("N","Night")),
     "next_start_date" : "{}/{}/{}".format(nextstartDate.day,nextstartDate.month,nextstartDate.year) , 
     "next_off_date" : "{}/{}/{}".format(nextoffDate.day,nextoffDate.month,nextoffDate.year) , 
+    "start_time" : "{}-{}-{} 06:00:00".format(nextstartDate.year,nextstartDate.month,nextstartDate.day) ,
+    "end_time" : "{}-{}-{} 06:00:00".format(shiftend.year,shiftend.month,shiftend.day) , 
+    "message" :  "{}".format(message),
     "First_Day_Shift_Was" : "{}/{}/{}".format(FirstDayShift.day,FirstDayShift.month,FirstDayShift.year)
   }
 )
