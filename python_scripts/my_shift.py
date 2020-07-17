@@ -103,6 +103,14 @@ if is_date_between(holiday_st,holiday_ed):
 
 shiftend = nextstartDate + datetime.timedelta(days=int(PattenShift[0])-1)
 
+# added sleep count to next roster day on
+# so alexa can say some thing
+sleeps = nextstartDate - today
+
+Daynames = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday','Sunday']
+
+#logger.info("This day name =  '%s' ",Daynames[nextstartDate.weekday()])
+
 hass.states.set(sensorName , areweonoff ,
   {
     "icon" : "mdi:calendar-star" ,
@@ -116,6 +124,7 @@ hass.states.set(sensorName , areweonoff ,
     "start_time" : "{}-{}-{} 06:00:00".format(nextstartDate.year,nextstartDate.month,nextstartDate.day) ,
     "end_time" : "{}-{}-{} 06:00:00".format(shiftend.year,shiftend.month,shiftend.day) , 
     "message" :  "{}".format(message),
+    "alexa_say" : "there are {} sleeps. Therefore you are starting on {}. ".format(sleeps.days , Daynames[nextstartDate.weekday()]) ,
     "First_Day_Shift_Was" : "{}/{}/{}".format(FirstDayShift.day,FirstDayShift.month,FirstDayShift.year)
   }
 )
