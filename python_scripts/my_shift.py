@@ -111,6 +111,13 @@ Daynames = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday','
 
 #logger.info("This day name =  '%s' ",Daynames[nextstartDate.weekday()])
 
+if ThisShift = "D"
+    AM='05'
+    PM='17'
+elif ThisShift = "N"
+    AM = '17'
+    PM = '05'
+
 hass.states.set(sensorName , areweonoff ,
   {
     "icon" : "mdi:calendar-star" ,
@@ -121,8 +128,8 @@ hass.states.set(sensorName , areweonoff ,
     "this_day": "{}".format(ThisShift.replace("D","Day").replace("N","Night")),
     "next_start_date" : "{}/{}/{}".format(nextstartDate.day,nextstartDate.month,nextstartDate.year) , 
     "next_off_date" : "{}/{}/{}".format(nextoffDate.day,nextoffDate.month,nextoffDate.year) , 
-    "start_time" : "{}-{}-{} 06:00:00".format(nextstartDate.year,nextstartDate.month,nextstartDate.day) ,
-    "end_time" : "{}-{}-{} 06:00:00".format(shiftend.year,shiftend.month,shiftend.day) , 
+    "start_time" : "{}-{}-{} {}:00:00".format(nextstartDate.year,nextstartDate.month,nextstartDate.day,AM) ,
+    "end_time" : "{}-{}-{} {}:00:00".format(shiftend.year,shiftend.month,shiftend.day,PM) , 
     "message" :  "{}".format(message),
     "alexa_say" : "there are {} sleeps. Therefore you are starting on {}. ".format(sleeps.days , Daynames[nextstartDate.weekday()]) ,
     "First_Day_Shift_Was" : "{}/{}/{}".format(FirstDayShift.day,FirstDayShift.month,FirstDayShift.year)
