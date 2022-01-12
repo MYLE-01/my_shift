@@ -81,14 +81,14 @@ elif FirstDayShift_Mod <= int(PattenShift[0]):
   ThisShift = patten[FirstDayShift_Mod-1]
 
 if ThisShift == "OFF":
-    AM = A
-    PM = P
+    AMM = A
+    PMM = P
 elif ThisShift == "D":
-    AM = A
-    PM = P
+    AMM = A
+    PMM = P
 elif ThisShift == "N":
-    AM = P
-    PM = A
+    AMM = P
+    PMM = A
 
 
 
@@ -142,8 +142,8 @@ hass.states.set(sensorName , areweonoff ,
     "this_day": "{}".format(ThisShift.replace("D","Day").replace("N","Night")),
     "next_start_date" : "{}/{}/{}".format(nextstartDate.day,nextstartDate.month,nextstartDate.year) , 
     "next_off_date" : "{}/{}/{}".format(nextoffDate.day,nextoffDate.month,nextoffDate.year) , 
-    "start_time" : "{}-{}-{} {}:00:00".format(nextstartDate.year,nextstartDate.month,nextstartDate.day,AM) ,
-    "end_time" : "{}-{}-{} {}:00:00".format(shiftend.year,shiftend.month,shiftend.day,PM) , 
+    "start_time" : "{}-{}-{} {}:00:00".format(nextstartDate.year,nextstartDate.month,nextstartDate.day,AMM) ,
+    "end_time" : "{}-{}-{} {}:00:00".format(shiftend.year,shiftend.month,shiftend.day,PMM) , 
     "message" :  "{}".format(message),
     "alexa_say" : "there are {} sleeps. Therefore you are starting on {}. ".format(sleeps.days , Daynames[nextstartDate.weekday()]) ,
     "First_Day_Shift_Was" : "{}/{}/{}".format(FirstDayShift.day,FirstDayShift.month,FirstDayShift.year)
