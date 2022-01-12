@@ -68,6 +68,10 @@ patten = patten + " " * FirstDayShift_Mod
 ThisShift = ""
 areweonoff = ""
 
+
+
+
+
 if FirstDayShift_Mod > int(PattenShift[0]):
   areweonoff = 'Off'
   ThisShift = "OFF"
@@ -75,6 +79,19 @@ if FirstDayShift_Mod > int(PattenShift[0]):
 elif FirstDayShift_Mod <= int(PattenShift[0]):
   areweonoff = 'on'
   ThisShift = patten[FirstDayShift_Mod-1]
+
+if ThisShift == "OFF":
+    AM = A
+    PM = P
+elif ThisShift == "D":
+    AM = A
+    PM = P
+elif ThisShift == "N":
+    AM = P
+    PM = A
+
+
+
 
 # well as we know what day patten we are in
 # we can work out our next start date.
@@ -113,12 +130,7 @@ Daynames = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday','
 
 #logger.info("This day name =  '%s' ",Daynames[nextstartDate.weekday()])
 
-if ThisShift == "D":
-    AM = A
-    PM = P
-elif ThisShift == "N":
-    AM = P
-    PM = A
+
 
 hass.states.set(sensorName , areweonoff ,
   {
