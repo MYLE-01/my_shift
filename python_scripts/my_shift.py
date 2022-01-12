@@ -111,10 +111,10 @@ Daynames = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday','
 
 #logger.info("This day name =  '%s' ",Daynames[nextstartDate.weekday()])
 
-if ThisShift = "D"
+if ThisShift == "D"
     AM='05'
     PM='17'
-elif ThisShift = "N"
+elif ThisShift == "N"
     AM = '17'
     PM = '05'
 
