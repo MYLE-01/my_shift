@@ -1,6 +1,8 @@
 
 today = datetime.datetime.now().date()
 
+A = '05' # AM start time
+P = '17' # PM start time
 
 shiftpatten = data.get('shiftpatten')
 name = data.get('name')
@@ -104,19 +106,19 @@ if is_date_between(holiday_st,holiday_ed):
 shiftend = nextstartDate + datetime.timedelta(days=int(PattenShift[0])-1)
 
 # added sleep count to next roster day on
-# so alexa can say some thing
+# so alexa can say some thing good
 sleeps = nextstartDate - today
 
 Daynames = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday','Sunday']
 
 #logger.info("This day name =  '%s' ",Daynames[nextstartDate.weekday()])
 
-if ThisShift == "D"
-    AM='05'
-    PM='17'
-elif ThisShift == "N"
-    AM = '17'
-    PM = '05'
+if ThisShift == "D":
+    AM = A
+    PM = P
+elif ThisShift == "N":
+    AM = P
+    PM = A
 
 hass.states.set(sensorName , areweonoff ,
   {
